@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="max-age=3600">
+  <title>Accommodations - Gonah Homes</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body class="accommodations">
+  <span class="menu-btn" onclick="toggleMenu()">&#9776; Menu</span>
+  <div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="accommodations.html">Accommodations</a>
+    <a href="policies.html">Policies</a>
+    <a href="local_recommendations.html">Local Recommendations</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+
+  <div class="content">
+    <h1>Our Accommodations</h1>
+    
+    <div class="accommodation-listing">
+      <h2>Studio Apartment</h2>
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" alt="Studio 1">
+        <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg" alt="Studio 2">
+        <img src="https://images.pexels.com/photos/1643385/pexels-photo-1643385.jpeg" alt="Studio 3">
+      </div>
+      <p>Cozy and modern studio apartment perfect for singles or couples.</p>
+      <ul>
+        <li>Open plan living space</li>
+        <li>Kitchenette</li>
+        <li>High-speed internet</li>
+        <li>Smart TV</li>
+      </ul>
+      <p><strong>Price:</strong> From KSh 2,500 per night</p>
+    </div>
+
+    <div class="accommodation-listing">
+      <h2>One Bedroom Apartment</h2>
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg" alt="1BR 1">
+        <img src="https://images.pexels.com/photos/1648777/pexels-photo-1648777.jpeg" alt="1BR 2">
+        <img src="https://images.pexels.com/photos/1648778/pexels-photo-1648778.jpeg" alt="1BR 3">
+      </div>
+      <p>Comfortable one-bedroom apartment with separate living area.</p>
+      <ul>
+        <li>Separate bedroom</li>
+        <li>Full kitchen</li>
+        <li>Living room</li>
+        <li>Work desk</li>
+      </ul>
+      <p><strong>Price:</strong> From KSh 3,500 per night</p>
+    </div>
+
+    <div class="accommodation-listing">
+      <h2>Two Bedroom Apartment</h2>
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/1571452/pexels-photo-1571452.jpeg" alt="2BR 1">
+        <img src="https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg" alt="2BR 2">
+        <img src="https://images.pexels.com/photos/1571454/pexels-photo-1571454.jpeg" alt="2BR 3">
+      </div>
+      <p>Spacious two-bedroom apartment ideal for families or sharing.</p>
+      <ul>
+        <li>2 Bedrooms</li>
+        <li>Full kitchen</li>
+        <li>Living room</li>
+        <li>2 Bathrooms</li>
+      </ul>
+      <p><strong>Price:</strong> From KSh 5,000 per night</p>
+    </div>
+
+    <div class="accommodation-listing">
+      <h2>Three Bedroom Apartment</h2>
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="3BR 1">
+        <img src="https://images.pexels.com/photos/1571461/pexels-photo-1571461.jpeg" alt="3BR 2">
+        <img src="https://images.pexels.com/photos/1571462/pexels-photo-1571462.jpeg" alt="3BR 3">
+      </div>
+      <p>Large three-bedroom apartment perfect for families or groups.</p>
+      <ul>
+        <li>3 Bedrooms</li>
+        <li>2 Bathrooms</li>
+        <li>Full kitchen and dining</li>
+        <li>Balcony</li>
+      </ul>
+      <p><strong>Price:</strong> From KSh 8,000 per night</p>
+    </div>
+
+    <div class="accommodation-listing">
+      <h2>Four Bedroom Apartment</h2>
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/1571470/pexels-photo-1571470.jpeg" alt="4BR 1">
+        <img src="https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg" alt="4BR 2">
+        <img src="https://images.pexels.com/photos/1571472/pexels-photo-1571472.jpeg" alt="4BR 3">
+      </div>
+      <p>Luxurious four-bedroom apartment for large families or groups.</p>
+      <ul>
+        <li>4 Bedrooms</li>
+        <li>3 Bathrooms</li>
+        <li>Full kitchen and dining</li>
+        <li>Multiple balconies</li>
+      </ul>
+      <p><strong>Price:</strong> From KSh 12,000 per night</p>
+    </div>
+
+    <div class="accommodation-listing">
+      <h2>Maisonette</h2>
+      <div class="carousel">
+        <img src="https://images.pexels.com/photos/1571480/pexels-photo-1571480.jpeg" alt="Maisonette 1">
+        <img src="https://images.pexels.com/photos/1571481/pexels-photo-1571481.jpeg" alt="Maisonette 2">
+        <img src="https://images.pexels.com/photos/1571482/pexels-photo-1571482.jpeg" alt="Maisonette 3">
+      </div>
+      <p>Elegant duplex maisonette with premium amenities.</p>
+      <ul>
+        <li>Two floors</li>
+        <li>4 Bedrooms</li>
+        <li>Private garden</li>
+        <li>Premium furnishings</li>
+      </ul>
+      <p><strong>Price:</strong> From KSh 15,000 per night</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

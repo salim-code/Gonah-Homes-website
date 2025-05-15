@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Recommendations</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+  <span class="menu-btn" onclick="toggleMenu()">&#9776; Menu</span>
+  <div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="accommodations.html">Accommodations</a>
+    <a href="policies.html">Policies</a>
+    <a href="local_recommendations.html">Local Recommendations</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+
+  <div class="content">
+    <h1>Local Recommendations</h1>
+    
+    <section>
+      <h2>Nature & Wildlife</h2>
+      <ul>
+        <li><strong>Haller Park</strong> - Wildlife sanctuary and former cement quarry, home to various animals including giraffes and hippos</li>
+        <li><strong>Nguuni Sanctuary</strong> - Nature reserve perfect for bird watching and seeing giraffes in their natural habitat</li>
+        <li><strong>Butterfly Pavillion</strong> - Beautiful sanctuary featuring various butterfly species</li>
+        <li><strong>Mamba Village</strong> - Crocodile farm and restaurant offering unique wildlife experiences</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Beaches & Water Activities</h2>
+      <ul>
+        <li><strong>Nyali Beach</strong> - Beautiful white sandy beach with opportunities for:
+          <ul>
+            <li>Boat riding</li>
+            <li>Surfing</li>
+            <li>Swimming</li>
+          </ul>
+        </li>
+        <li><strong>Pirates Beach</strong> - Popular spot for water sports and relaxation</li>
+        <li><strong>Mombasa Beach</strong> - Perfect for boat rides and watching the sunset</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Family Entertainment</h2>
+      <ul>
+        <li><strong>Go-Kart</strong> - Exciting racing experience for families and friends</li>
+        <li><strong>Mamba Village</strong> - Educational tours and family-friendly activities</li>
+        <li><strong>Butterfly Pavillion</strong> - Educational and entertaining for children</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Dining</h2>
+      <ul>
+        <li><strong>La Fattoria Resort and Hotel</strong> - Luxury dining experience with international cuisine</li>
+        <li><strong>Forodhani Restaurant</strong> - Authentic local Swahili cuisine and seafood</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Shopping</h2>
+      <ul>
+        <li><strong>Kongowea Market</strong> - Large local market for fresh produce, clothes, and souvenirs</li>
+        <li><strong>City Mall Nyali</strong> - Modern shopping mall with various retail stores and restaurants</li>
+        <li><strong>Naivas Nyali</strong> - Well-stocked supermarket with fresh produce and household items</li>
+        <li><strong>Naivas Bombolulu</strong> - Convenient supermarket location for daily necessities</li>
+        <li><strong>QuickMart Nyali</strong> - Supermarket offering a wide range of products</li>
+        <li><strong>Carrefour Nyali</strong> - International supermarket chain with extensive product selection</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Nightlife & Entertainment</h2>
+      <ul>
+        <li><strong>Tapaz Bamburi</strong> - Popular entertainment venue with great ambiance</li>
+        <li><strong>001 Club</strong> - Vibrant nightclub for dancing and socializing</li>
+        <li><strong>Hypnotica</strong> - Modern entertainment spot with music and drinks</li>
+      </ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

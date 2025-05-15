@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Gonah Homes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="blog">
+  <span class="menu-btn" onclick="toggleMenu()">&#9776; Menu</span>
+  <div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="accommodations.html">Accommodations</a>
+    <a href="policies.html">Policies</a>
+    <a href="local_recommendations.html">Local Recommendations</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="blog.html">Blog</a>
+  </div>
+
+  <div class="content">
+    <h1>Gonah Homes Blog</h1>
+    
+    <article class="blog-post">
+      <h2>Best Beaches in Mombasa</h2>
+      <div class="post-meta">Posted on July 1, 2023</div>
+      <p class="preview">Discover the most beautiful beaches in Mombasa, from the pristine Nyali Beach to the vibrant Pirates Beach...</p>
+      <div class="full-content" style="display: none;">
+        <p>Mombasa's coastline is dotted with stunning beaches that offer something for everyone. Nyali Beach features pristine white sands perfect for sunbathing and swimming. Pirates Beach is ideal for water sports enthusiasts, while Mombasa Beach offers spectacular sunset views and boating opportunities. Each beach has its unique charm and activities, making Mombasa a perfect beach holiday destination.</p>
+      </div>
+      <button onclick="toggleContent(this)" class="read-more">Read More</button>
+    </article>
+
+    <article class="blog-post">
+      <h2>Local Food Guide: Must-Try Swahili Dishes</h2>
+      <div class="post-meta">Posted on June 15, 2023</div>
+      <p class="preview">Experience the rich flavors of coastal cuisine with our guide to traditional Swahili dishes...</p>
+      <div class="full-content" style="display: none;">
+        <p>Swahili cuisine is a delightful fusion of African, Arabic, and Indian influences. Must-try dishes include Pilau (spiced rice), Biryani, fresh seafood, and the famous Mombasa Halwa dessert. Local restaurants offer authentic experiences where you can savor these traditional delicacies while enjoying the coastal atmosphere.</p>
+      </div>
+      <button onclick="toggleContent(this)" class="read-more">Read More</button>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK with defer attribute for better loading performance -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js" defer></script>
+</head>
+<body class="reviews">
+  <span class="menu-btn" onclick="toggleMenu()">&#9776; Menu</span>
+  <div id="sideMenu" class="side-menu">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleMenu()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="accommodations.html">Accommodations</a>
+    <a href="policies.html">Policies</a>
+    <a href="local_recommendations.html">Local Recommendations</a>
+    <a href="reviews.html">Reviews</a>
+  </div>
+
+  <div class="content">
+    <h1>Customer Reviews</h1>
+
+    <form id="review-form">
+      <h2>Leave your review</h2>
+      <div class="star-rating">
+        <input type="radio" id="star1" name="rating" value="1" />
+        <label for="star1">★</label>
+        <input type="radio" id="star2" name="rating" value="2" />
+        <label for="star2">★</label>
+        <input type="radio" id="star3" name="rating" value="3" />
+        <label for="star3">★</label>
+        <input type="radio" id="star4" name="rating" value="4" />
+        <label for="star4">★</label>
+        <input type="radio" id="star5" name="rating" value="5" />
+        <label for="star5">★</label>
+      </div>
+      <textarea id="review-text" placeholder="Share your experience with us..."></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <div id="reviews-list">
+      <!-- Reviews will be loaded here -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // This will run after Firebase is initialized in script.js
+      const reviewsList = document.getElementById("reviews-list");
+      
+      // Always show a loading indicator first
+      reviewsList.innerHTML = "<p>Loading reviews...</p>";
+      
+      // Wait a bit to ensure Firebase has time to initialize
+      setTimeout(function() {
+        try {
+          if (typeof firebase !== 'undefined' && firebase.firestore) {
+            const db = firebase.firestore();
+    
+            // Retrieve and display reviews
+            db.collection("reviews").orderBy("timestamp", "desc").get().then((snapshot) => {
+              reviewsList.innerHTML = "<h2>What our customers say</h2>"; // Clear existing reviews
+    
+              if (snapshot.empty) {
+                reviewsList.innerHTML += "<p>No reviews yet. Be the first to leave a review!</p>";
+                return;
+              }
+    
+              snapshot.forEach(doc => {
+                const review = doc.data();
+                const reviewElement = document.createElement("div");
+                reviewElement.className = "review-item";
+                reviewElement.innerHTML = `
+                  <p><strong>Rating:</strong> <span style="color: #f39c12;">${"★".repeat(Number(review.rating || 0))}</span></p>
+                  <p><strong>Review:</strong> ${review.review}</p>
+                  <hr>
+                `;
+                reviewsList.appendChild(reviewElement);
+              });
+            }).catch(error => {
+              console.error("Error getting reviews:", error);
+              reviewsList.innerHTML = "<p>Unable to load reviews at this time. Please try again later.</p>";
+            });
+          } else {
+            reviewsList.innerHTML = "<p>Unable to load reviews at this time. Please try again later.</p>";
+          }
+        } catch (error) {
+          console.error("Error in reviews script:", error);
+          reviewsList.innerHTML = "<p>Unable to load reviews at this time. Please try again later.</p>";
+        }
+      }, 1000); // Give Firebase 1 second to initialize
+    });
+  </script>
+</body>
+</html>

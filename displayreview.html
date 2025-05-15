@@ -1,0 +1,20 @@
+<div id="reviews-list"></div>
+
+<script>
+    // Retrieve and display reviews
+    const reviewsList = document.getElementById("reviews-list");
+
+    db.collection("reviews").orderBy("timestamp", "desc").onSnapshot((snapshot) => {
+        reviewsList.innerHTML = ""; // Clear existing reviews
+        snapshot.forEach(doc => {
+            const review = doc.data();
+            const reviewElement = document.createElement("div");
+            reviewElement.innerHTML = `
+                <p><strong>Rating:</strong> ${"★".repeat(Number(review.rating))}</p>
+                <p><strong>Review:</strong> ${review.writtenReview}</p>
+                <hr>
+            `;
+            reviewsList.appendChild(reviewElement);
+        });
+    });
+</script>
